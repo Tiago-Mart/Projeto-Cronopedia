@@ -1,0 +1,218 @@
+/* Geral*/
+
+
+/* Input - Geral*/
+input.input-text{
+    --pading: 1em;
+    width: 15rem;
+    aspect-ratio: 1/0.125;
+    padding: calc(var(--pading)/2) var(--pading) calc(var(--pading)/2) var(--pading);
+    border-radius: 0;
+    background: rgba(90, 93, 106, 0.45);
+    outline: none;
+    border: none;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+input.input-text::placeholder{
+    color: hsla(227, 9%, 43%, 0.8);
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* Estilo 1*/
+input.style1{
+    border-radius: 0;
+
+}
+
+.style1:focus + label.label-style1::after{
+    display: block ;
+}
+
+
+label.label-style1{
+    width: 17rem;
+    position: relative;
+    display: block;
+    height: 3px;
+}
+
+label.label-style1::after{
+    content: '';
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 3px;
+    border-radius: 100vw;
+    background-color: var(--main-color);
+    animation: slidingCenter 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes slidingCenter{
+    from{
+        transform-origin: center;
+        transform: scaleX(0);
+    }
+    to{
+        transform: scaleX(1);
+    }
+}
+
+input.style2{
+    border-radius: 8px;
+    border: solid 2px transparent;
+    box-sizing: content-box;
+    transition: 0.35s cubic-bezier(0.13, 0.38, 0.56, 0.99);
+}
+
+.style2:focus{
+    border: solid 2px var(--main-color);
+}
+
+/* Checkbox - Css Tricks (fonte) */
+input[type = "checkbox"]{
+    appearance: none;
+    display: grid;
+    place-content: center;
+
+    border-radius: 5px;
+    display: grid;
+    place-content: center;
+    transform: translateY(-0.075em);
+
+    height: 20px;
+    width: 20px;
+    color: currentColor;
+    border: 3px solid var(--main-color);
+    transition: 0.25s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.85em;
+    height: 0.85em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em white;
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+input[type = "checkbox"]:checked{
+    background: var(--main-color);
+}
+
+/* Search */
+.search{
+    --pading: 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: calc(var(--pading)/2) var(--pading) calc(var(--pading)/2) var(--pading);
+
+    border-radius: 100vw;
+    color: white;
+    background-color: hsla(229, 8%, 38%, 0.45);
+    transition: 0.15s cubic-bezier(0.39, 0.575, 0.565, 1);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+.search:hover{
+    filter: brightness(140%);
+}
+
+.search-bar:focus + .search{
+   background-color: red;
+}
+
+.search > *{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: currentColor;
+}
+
+.search > i{
+    font-size: 1.5rem;
+}
+
+.search-bar{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.search > button[type="submit"]{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+/* Icone do menu */
+button.menu-button, button.perfil-btn{
+    width: 2.5em;
+    aspect-ratio: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    transition: 0.25s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+button.menu-button:hover, button.perfil-btn:hover{
+    background-color: hsla(229, 8%, 38%, 0.2);
+}
+
+button.menu-button:focus-visible, button.perfil-btn:focus-visible{
+    transition: 0ms;
+    outline: 2px solid var(--main-color);
+    outline-offset: 4px;
+}
+
+button.menu-button::before, button.menu-button::after{
+    content: '';
+    width: 1.5em;
+    height: 2px;
+    border-radius: 100vw;
+    background-color: #000;
+    position: absolute;
+    transition: 300ms cubic-bezier(0.76, 0.29, 0.57, 0.93);
+}
+
+.menu-button::before{
+    margin: -5px 0px 0px 0px;
+    transform: rotate(0deg);
+}
+
+button.menu-button::after{
+    margin: 5px 0px 0px 0px;
+    transform: rotate(0deg);
+}
+
+button.clicado::before{
+    margin: 0px 0px 0px 0px;
+
+    transform: rotate(-45deg);
+}
+
+button.clicado::after{
+    margin: 0px 0px 0px 0px;
+    transform: rotate(-135deg);
+}
+
+/* Botões de menu */
+button.perfil-btn i{
+    font-size: 1.5em;
+}
