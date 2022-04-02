@@ -1,0 +1,186 @@
+/* Geral */
+header.topo-pagina{
+    --padding: 10em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.5em 1em 0.5em 1em;
+    position: fixed;
+    background-color: white;
+    top: 0px;
+    
+}
+
+
+
+/* Menu */
+.primary-menu {
+
+    --padding: 0.7em;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 var(--padding) 0 var(--padding);
+    gap: 2.5em;
+
+}
+
+.primary-menu li{
+    display: inline;
+}
+
+.primary-menu a{
+    text-decoration: none;
+
+    position: relative;
+    color: currentColor;
+}
+
+.topo-pagina a::after{
+    content: '';
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 100vw;
+    background-color: var(--main-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1);
+
+}
+
+.topo-pagina a:hover::after{
+
+    transform: scaleX(1);
+}
+
+a:focus-visible{
+    outline: 2px solid var(--main-color);
+    outline-offset: 4px;
+    border-radius: 100vw;
+}
+
+.topo-pagina button.menu-button{
+    position: absolute;
+    z-index: 9999;
+    width: 3em;
+    margin: 0 0 0 15px;
+    display: none;
+}
+
+.topo-pagina button.menu-button::before, .topo-pagina button.menu-button::after{
+    width: 30px;
+    height: 3px;
+    
+}
+
+
+
+
+/* Perfil */ 
+section.perfil-area{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    box-sizing: border-box;
+}
+
+.perfil-img{
+    width: 3.5em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 2px solid var(--main-color);
+
+    background-image: url("https://pbs.twimg.com/profile_images/1505642870610477060/fXOpdMar_400x400.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 0.25s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.perfil-img:focus-visible{
+    transition: 0ms;
+    outline: 2px solid var(--main-color);
+    outline-offset: 4px;
+}
+
+.perfil-img:hover{
+    filter: brightness(80%);
+}
+
+/* Responsividade */
+@media (max-width: 900px){
+    .topo-pagina button.menu-button{
+        display: flex;
+    }
+    .primary-menu {
+
+        position: fixed;
+        justify-content: center;
+        flex-direction: column;
+        inset: 0 50% 0 0;
+        background-color: white;
+        border-radius: 0 10px 10px 0;
+        box-shadow: 10px 0 10px 0px rgba(0, 0, 0, 0.178);
+        transform: translateX(-110%);
+        transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition: transform 0.7s cubic-bezier(0.87, 0, 0.13, 1);
+        
+
+        z-index: 8000;
+    }
+
+    .primary-menu[data-visible="true"]{
+        transform: translateX(0%);
+        transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .topo-pagina .search{
+        margin: 0 0 0 85px;
+    }
+
+}
+
+/* Footer */
+footer{
+    height: 10em;
+    background-color: var(--main-color);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    gap: 1em;
+}
+
+footer ul{
+    list-style: none;
+}
+
+footer a{
+    color: currentColor;
+}
+
+@media (max-width: 600px){
+    .search{
+        display: none;
+    }
+
+    footer{
+        height: 15em;
+        flex-direction: column;
+    }
+
+    footer li{
+        display: inline;
+    }
+}
+
+
+
