@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
 
-          <!-- JAVASCRIPT -->
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-          <script src="assets/js/inputs.js"></script>
-          <script src="assets/js/cards.js"></script>
-          <script src="assets/js/menu.js"></script>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-          <script src="https://use.fontawesome.com/112556c8a1.js"></script>
-          
-          <!-- CSS -->
-          <link rel="preconnect" href="https://fonts.googleapis.com">
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-          <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Work+Sans:wght@700&display=swap" rel="stylesheet">
-          <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
-          <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-          <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-          <link rel="stylesheet" href="assets/css/root.css">
-          <link rel="stylesheet" href="assets/css/inputs.css">
-          <link rel="stylesheet" href="assets/css/cards.css">
-          <link rel="stylesheet" href="assets/css/elements.css">
-          <link rel="stylesheet" href="assets/css/home-page.css">
+    <!-- JAVASCRIPT -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/inputs.js"></script>
+    <script src="assets/js/cards.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <script src="https://use.fontawesome.com/112556c8a1.js"></script>
+
+    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Work+Sans:wght@700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/root.css">
+    <link rel="stylesheet" href="assets/css/inputs.css">
+    <link rel="stylesheet" href="assets/css/cards.css">
+    <link rel="stylesheet" href="assets/css/elements.css">
+    <link rel="stylesheet" href="assets/css/home-page.css">
 
 </head>
+
 <body>
     <!-- Header-->
     <header class="topo-pagina">
@@ -35,7 +39,7 @@
         </button>
 
         <nav class="">
-            <ul class="primary-menu" id="primary-nav" data-visible = "false">
+            <ul class="primary-menu" id="primary-nav" data-visible="false">
                 <li> <a href="#"> Home</a></li>
                 <li> <a href="#"> Artigos</a></li>
                 <li> <a href="#"> Surpreenda-me!</a></li>
@@ -43,11 +47,11 @@
         </nav>
 
 
-        <div class="search">
+        <form method="GET" action="/search" class="search">
             <i class='bx bx-search'></i>
-            <input type="text" name="" id="search" class="search-bar">
-            <button type="submit" > Pesquisar</button>
-        </div>
+            <input type="text" name="q" id="search" class="search-bar">
+            <button type="submit">Pesquisar</button>
+        </form>
 
         <section class="perfil-area">
             <button class="perfil-img">
@@ -56,18 +60,22 @@
                 <i class='bx bx-cog'></i>
             </button>
             <button class="perfil-btn">
-                <i class='bx bx-bell' ></i>
+                <i class='bx bx-bell'></i>
             </button>
         </section>
     </header>
 
     <!-- Artigo Principal -->
     <article class="main-article">
-        <img src="https://cdna.artstation.com/p/assets/images/images/000/199/930/large/gilles-beloeil-ac301-010.jpg?1410313937" alt="">
+        <img src="https://cdna.artstation.com/p/assets/images/images/000/199/930/large/gilles-beloeil-ac301-010.jpg?1410313937"
+            alt="">
 
         <section class="article-text">
             <h1>Artigo em Destaque: Roma</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et massa vehicula volutpat nec ultrices. Volutpat morbi mauris dictum felis feugiat. Lorem ac, nunc viverra viverra vel, nibh dis senectus. Id feugiat netus fermentum vel aenean. Dui, nisi diam nunc, sed nunc. Odio aliquam ut fames vitae vitae leo justo. Elementum eu ac aenean semper leo. Commodo sed quam suspendisse vestibulum massa praesent. 
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et massa vehicula volutpat nec ultrices.
+                Volutpat morbi mauris dictum felis feugiat. Lorem ac, nunc viverra viverra vel, nibh dis senectus. Id
+                feugiat netus fermentum vel aenean. Dui, nisi diam nunc, sed nunc. Odio aliquam ut fames vitae vitae leo
+                justo. Elementum eu ac aenean semper leo. Commodo sed quam suspendisse vestibulum massa praesent.
                 Scelerisque vel, quis orci, viverra aliquam massa, at nunc.</p>
         </section>
     </article>
@@ -82,49 +90,49 @@
                     <p> Texto teste</p>
                 </article>
             </div>
-        
+
             <div class="card-article">
                 <article class="text-card">
                     <h3> Título </h3>
                     <p> Texto teste</p>
                 </article>
             </div>
-    
+
             <div class="card-article">
                 <article class="text-card">
                     <h3> Título </h3>
                     <p> Texto teste</p>
                 </article>
             </div>
-        
+
             <div class="card-article">
                 <article class="text-card">
                     <h3> Título </h3>
                     <p> Texto teste</p>
                 </article>
             </div>
-    
+
             <div class="card-article">
                 <article class="text-card">
                     <h3> Título </h3>
                     <p> Texto teste</p>
                 </article>
             </div>
-        
+
             <div class="card-article">
                 <article class="text-card">
                     <h3> Título </h3>
                     <p> Texto teste</p>
                 </article>
             </div>
-    
+
             <div class="card-article ">
                 <article class="text-card">
                     <h3> Título </h3>
                     <p> Texto teste</p>
                 </article>
             </div>
-        
+
             <div class="card-article">
                 <article class="text-card">
                     <h3> Título </h3>
@@ -144,49 +152,49 @@
                     <p> Texto teste</p>
                 </article>
             </div>
-        
+
             <div class="card-article">
                 <article class="text-card">
                     <h3> Título </h3>
                     <p> Texto teste</p>
                 </article>
             </div>
-    
+
             <div class="card-article">
                 <article class="text-card">
                     <h3> Título </h3>
                     <p> Texto teste</p>
                 </article>
             </div>
-        
+
             <div class="card-article">
                 <article class="text-card">
                     <h3> Título </h3>
                     <p> Texto teste</p>
                 </article>
             </div>
-    
+
             <div class="card-article">
                 <article class="text-card">
                     <h3> Título </h3>
                     <p> Texto teste</p>
                 </article>
             </div>
-        
+
             <div class="card-article">
                 <article class="text-card">
                     <h3> Título </h3>
                     <p> Texto teste</p>
                 </article>
             </div>
-    
+
             <div class="card-article ">
                 <article class="text-card">
                     <h3> Título </h3>
                     <p> Texto teste</p>
                 </article>
             </div>
-        
+
             <div class="card-article">
                 <article class="text-card">
                     <h3> Título </h3>
@@ -199,7 +207,13 @@
     <article class="normal-article" id="novos artigos">
         <h2>Sobre o projeto</h2>
         <section class="text-sobre">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et massa vehicula volutpat nec ultrices. Volutpat morbi mauris dictum felis feugiat. Lorem ac, nunc viverra viverra vel, nibh dis senectus. Id feugiat netus fermentum vel aenean. Dui, nisi diam nunc, sed nunc. Odio aliquam ut fames vitae vitae leo justo. Elementum eu ac aenean semper leo. Commodo sed quam suspendisse vestibulum massa praesent. Scelerisque vel, quis orci, viverra aliquam massa, at nunc. Odio aliquam ut fames vitae vitae leo justo. Elementum eu ac aenean semper leo. Commodo sed quam suspendisse vestibulum massa praesent. Scelerisque vel, quis orci, viverra aliquam massa, at nunc.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et massa vehicula volutpat nec ultrices. Volutpat
+            morbi mauris dictum felis feugiat. Lorem ac, nunc viverra viverra vel, nibh dis senectus. Id feugiat netus
+            fermentum vel aenean. Dui, nisi diam nunc, sed nunc. Odio aliquam ut fames vitae vitae leo justo. Elementum
+            eu ac aenean semper leo. Commodo sed quam suspendisse vestibulum massa praesent. Scelerisque vel, quis orci,
+            viverra aliquam massa, at nunc. Odio aliquam ut fames vitae vitae leo justo. Elementum eu ac aenean semper
+            leo. Commodo sed quam suspendisse vestibulum massa praesent. Scelerisque vel, quis orci, viverra aliquam
+            massa, at nunc.
         </section>
 
         <section class="botoes">
@@ -235,4 +249,5 @@
         </section>
     </footer>
 </body>
+
 </html>
