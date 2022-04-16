@@ -2,7 +2,7 @@
 
 
 /* Input - Geral*/
-input.input-text{
+input.input-text {
     --pading: 1em;
     width: 15rem;
     aspect-ratio: 1/0.125;
@@ -15,31 +15,31 @@ input.input-text{
     font-family: 'Poppins', sans-serif;
 }
 
-input.input-text::placeholder{
+input.input-text::placeholder {
     color: hsla(227, 9%, 43%, 0.8);
     font-style: italic;
     font-weight: 300;
 }
 
 /* Estilo 1*/
-input.style1{
+input.style1 {
     border-radius: 0;
 
 }
 
-.style1:focus + label.label-style1::after{
-    display: block ;
+.style1:focus+label.label-style1::after {
+    display: block;
 }
 
 
-label.label-style1{
+label.label-style1 {
     width: 17rem;
     position: relative;
     display: block;
     height: 3px;
 }
 
-label.label-style1::after{
+label.label-style1::after {
     content: '';
     display: none;
     position: relative;
@@ -50,29 +50,30 @@ label.label-style1::after{
     animation: slidingCenter 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-@keyframes slidingCenter{
-    from{
+@keyframes slidingCenter {
+    from {
         transform-origin: center;
         transform: scaleX(0);
     }
-    to{
+
+    to {
         transform: scaleX(1);
     }
 }
 
-input.style2{
+input.style2 {
     border-radius: 8px;
     border: solid 2px transparent;
     box-sizing: content-box;
     transition: 0.35s cubic-bezier(0.13, 0.38, 0.56, 0.99);
 }
 
-.style2:focus{
+.style2:focus {
     border: solid 2px var(--main-color);
 }
 
 /* Checkbox - Css Tricks (fonte) */
-input[type = "checkbox"]{
+input[type="checkbox"] {
     appearance: none;
     display: grid;
     place-content: center;
@@ -105,12 +106,12 @@ input[type="checkbox"]:checked::before {
     transform: scale(1);
 }
 
-input[type = "checkbox"]:checked{
+input[type="checkbox"]:checked {
     background: var(--main-color);
 }
 
 /* Search */
-.search{
+.search {
     --pading: 1em;
     display: flex;
     justify-content: space-around;
@@ -125,38 +126,39 @@ input[type = "checkbox"]:checked{
     font-weight: 300;
 }
 
-.search:hover{
+.search:hover {
     filter: brightness(140%);
 }
 
-.search-bar:focus + .search{
-   background-color: red;
+.search-bar:focus+.search {
+    background-color: red;
 }
 
-.search > *{
+.search>* {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     color: currentColor;
 }
 
-.search > i{
+.search>i {
     font-size: 1.5rem;
 }
 
-.search-bar{
+.search-bar {
     background-color: transparent;
     border: none;
     outline: none;
 }
 
-.search > button[type="submit"]{
+.search>button[type="submit"] {
     background-color: transparent;
     border: none;
     outline: none;
 }
 
 /* Icone do menu */
-button.menu-button, button.perfil-btn{
+button.menu-button,
+button.perfil-btn {
     width: 2.5em;
     aspect-ratio: 1;
     position: relative;
@@ -171,17 +173,20 @@ button.menu-button, button.perfil-btn{
     transition: 0.25s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
-button.menu-button:hover, button.perfil-btn:hover{
+button.menu-button:hover,
+button.perfil-btn:hover {
     background-color: hsla(229, 8%, 38%, 0.2);
 }
 
-button.menu-button:focus-visible, button.perfil-btn:focus-visible{
+button.menu-button:focus-visible,
+button.perfil-btn:focus-visible {
     transition: 0ms;
     outline: 2px solid var(--main-color);
     outline-offset: 4px;
 }
 
-button.menu-button::before, button.menu-button::after{
+button.menu-button::before,
+button.menu-button::after {
     content: '';
     width: 1.5em;
     height: 2px;
@@ -191,28 +196,28 @@ button.menu-button::before, button.menu-button::after{
     transition: 300ms cubic-bezier(0.76, 0.29, 0.57, 0.93);
 }
 
-.menu-button::before{
+.menu-button::before {
     margin: -5px 0px 0px 0px;
     transform: rotate(0deg);
 }
 
-button.menu-button::after{
+button.menu-button::after {
     margin: 5px 0px 0px 0px;
     transform: rotate(0deg);
 }
 
-button.clicado::before{
+button.clicado::before {
     margin: 0px 0px 0px 0px;
 
     transform: rotate(-45deg);
 }
 
-button.clicado::after{
+button.clicado::after {
     margin: 0px 0px 0px 0px;
     transform: rotate(-135deg);
 }
 
 /* Botões de menu */
-button.perfil-btn i{
+button.perfil-btn i {
     font-size: 1.5em;
 }

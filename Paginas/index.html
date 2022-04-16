@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="assets/css/cards.css">
     <link rel="stylesheet" href="assets/css/elements.css">
     <link rel="stylesheet" href="assets/css/home-page.css">
+    <link rel="stylesheet" href="assets/css/search.css">
 
 </head>
 
@@ -47,11 +48,16 @@
         </nav>
 
 
-        <form method="GET" action="/search" class="search">
+        <div class="search">
             <i class='bx bx-search'></i>
             <input type="text" name="q" id="search" class="search-bar">
             <button type="submit">Pesquisar</button>
-        </form>
+
+            <div class="search-results">
+
+            </div>
+
+        </div>
 
         <section class="perfil-area">
             <button class="perfil-img">

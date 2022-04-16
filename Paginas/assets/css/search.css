@@ -1,0 +1,28 @@
+.search-results>* {
+    display: none;
+}
+
+.search-results.active {
+    display: block;
+    margin: 0 auto;
+
+    position: fixed;
+    top: 100%;
+    left: -60%;
+    width: 200%;
+
+    background: hsla(229, 8%, 38%, 0.648);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.search-results.active>* {
+    width: 100%;
+
+    display: block;
+    padding: 10px;
+}
+
+.search-results.active .search-results-item:hover {
+    background: hsla(229, 8%, 38%, 0.648);
+}

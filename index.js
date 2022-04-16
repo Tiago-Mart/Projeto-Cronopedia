@@ -15,9 +15,11 @@ let htmlPath = path.join(__dirname + "/Paginas");
 require("dotenv").config();
 const DB_USER = process.env.DB_USER;
 const DB_PASS = process.env.DB_PASS;
-const COLLECTION = process.env.COLLECTION;
 const DB_NAME = process.env.DB_NAME;
 const DB_URL = `mongodb+srv://${DB_USER}:${DB_PASS}@cluster0.dff1c.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
+
+const USERSCOLLECTION = process.env.USERCOLLECTION;
+const ARTICLESCOLLECTION = process.env.ARTICLESCOLLECTION;
 
 //    Importar o MongoDB
 const { MongoClient, ObjectId } = require("mongodb");
@@ -28,7 +30,8 @@ async function main() {
   const db = client.db(DB_NAME);
 
   //    Procurar pelas collection que criamos
-  const collection = db.collection(COLLECTION);
+  // const UserCollection = db.collection(USERSCOLLECTION);
+  const articlesCollection = db.collection(ARTICLESCOLLECTION);
 
   // Formatando o corpo do requerimento com body-parser
   app.use(bodyParser.urlencoded({ extended: true }));
@@ -41,13 +44,17 @@ async function main() {
   });
 
   // Servindo a solicitação de pesquisa
-  app.get("/search", (req, res) => {
-    const q = req.query.q;
+  app.get("/search", async (req, res) => {
+    const termo = req.query.q;
 
-    if (q) {
-      res.send(`<h1>Pesquisa realizada com sucesso</h1> <p>Termo solicitado: ${q}</p>`);
+    const item = await articlesCollection.find({ resume: { $regex: termo } }).toArray();
+
+
+    if (item) {
+      res.send(item);
+    } else {
+      res.send("Nenhum resultado encontrado");
     }
-    res.send("<h1>Pesquisa não realizada</h1> <p>Nenhum termo foi solicitado</p>");
   });
 
   // Servindo a pagina de teste
