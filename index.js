@@ -47,13 +47,13 @@ async function main() {
   app.get("/search", async (req, res) => {
     const termo = req.query.q;
 
-    const item = await articlesCollection.find({ resume: { $regex: termo } }).toArray();
+    const item = await articlesCollection.find({ resume: { $regex: termo } }).limit(5).toArray();
 
 
     if (item) {
       res.send(item);
     } else {
-      res.send("Nenhum resultado encontrado");
+      res.send({ error: "Nenhum resultado encontrado" });
     }
   });
 

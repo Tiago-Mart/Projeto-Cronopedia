@@ -20,19 +20,25 @@ $(document).ready(function () {
                 url: "/search?q=" + termo,
                 method: "GET",
                 success: function (data) {
-                    console.log(data[0]);
-
-                    for (let i = 0; i < data.length; i++) {
-                        results.append(`<div class="search-results-item">
-                                    <div class="search-results-item-header">
-                                        <h3>${data[i].title}</h3>
-                                    </div>
-                                    <div class="search-results-item-body">
-                                        <p>
-                                            ${data[i].resume}
-                                        </p>
-                                    </div>
-                                </div>`);
+                    if (data.length > 0) {
+                        data.forEach(function (item) {
+                            results.append(`<div class="search-results-item">
+                                        <div class="search-results-item-header">
+                                            <a href="#"><h4>${item.title}</h4></a>
+                                        </div>
+                                        <div class="search-results-item-body">
+                                            <p>
+                                                ${item.resume.substring(0, 100).concat("...")}
+                                            </p>
+                                        </div>
+                                    </div>`);
+                        });
+                    } else {
+                        results.html(`<div class="search-results-item">
+                                        <div class="search-results-item-header">
+                                            <a href="#"><h4>Nenhum resultado encontrado</h4></a>
+                                        </div>
+                                    </div>`);
                     }
                 },
                 error: function (error) {
